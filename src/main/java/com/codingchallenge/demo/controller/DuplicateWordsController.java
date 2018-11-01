@@ -1,5 +1,7 @@
 package com.codingchallenge.demo.controller;
 
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
@@ -19,11 +21,15 @@ public class DuplicateWordsController {
 
 	@Autowired
 	private DuplicateWordsService DuplicateWordsService;
+	
+    private Logger logger = LoggerFactory.getLogger(this.getClass());
+
 
 	@GetMapping("/{sentense}")
 	@ApiOperation(value = "Finds duplicate words", notes = "The service will find all words that are "
 			+ "duplicated in the sentence and return an array of those words")
-	public @ResponseBody String[] getBook(@PathVariable String sentense) {
+	public @ResponseBody String[] getDuplicateWords(@PathVariable String sentense) {
+        logger.info("In Controller - {}", sentense);
 		return this.DuplicateWordsService.returnDuplicateWords(sentense);
 	}
 
