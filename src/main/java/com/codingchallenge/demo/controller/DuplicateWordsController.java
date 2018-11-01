@@ -16,7 +16,7 @@ import io.swagger.annotations.ApiOperation;
 
 @RestController
 @RequestMapping("/duplicates")
-@Api(tags = { "This service accepts a string as the request parameters and process it." })
+@Api(tags = { "This service exposes the methods for getting duplicate words" })
 public class DuplicateWordsController {
 
 	@Autowired
