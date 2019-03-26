@@ -20,7 +20,7 @@ import io.swagger.annotations.ApiOperation;
 public class DuplicateWordsController {
 
 	@Autowired
-	private DuplicateWordsService DuplicateWordsService;
+	private DuplicateWordsService duplicateWordsService;
 	
     private Logger logger = LoggerFactory.getLogger(this.getClass());
 
@@ -30,7 +30,8 @@ public class DuplicateWordsController {
 			+ "duplicated in the sentence and return an array of those words")
 	public @ResponseBody String[] getDuplicateWords(@PathVariable String sentense) {
         logger.info("In Controller - {}", sentense);
-		return this.DuplicateWordsService.returnDuplicateWords(sentense);
+        
+		return this.duplicateWordsService.returnDuplicateWords(sentense);
 	}
 
 }
