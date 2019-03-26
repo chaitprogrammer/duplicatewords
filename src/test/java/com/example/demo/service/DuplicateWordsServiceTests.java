@@ -11,6 +11,12 @@ import org.springframework.test.context.junit4.SpringRunner;
 
 import com.codingchallenge.demo.service.DuplicateWordsService;
 
+/**
+ * Adding javadocs 
+ * 
+ * @author chaitanya
+ *
+ */
 @RunWith(SpringRunner.class)
 @SpringBootTest(classes=DuplicateWordsService.class)
 public class DuplicateWordsServiceTests {
